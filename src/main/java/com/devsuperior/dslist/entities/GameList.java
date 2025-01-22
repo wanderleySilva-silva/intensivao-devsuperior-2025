@@ -33,7 +33,7 @@ public class GameList {
 		this.id = id;
 	}
 
-	public String getNome() {
+	public String getName() {
 		return name;
 	}
 

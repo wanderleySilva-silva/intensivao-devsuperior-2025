@@ -2,7 +2,7 @@ package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
 
-public class GameResponseDto {
+public class GameResponseDTO {
 
 	private Long id;
 	private String title;
@@ -14,7 +14,7 @@ public class GameResponseDto {
 	private String shortDescription;
 	private String longDescription;
 
-	public GameResponseDto(Game game) {
+	public GameResponseDTO(Game game) {
 		this.id = game.getId();
 		this.title = game.getTitle();
 		this.year = game.getYear();

@@ -2,7 +2,7 @@ package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
 
-public class GameRequestDto {
+public class GameRequestDTO {
 
 	private String title;
 	private Integer year;
@@ -13,7 +13,7 @@ public class GameRequestDto {
 	private String shortDescription;
 	private String longDescription;
 	
-	public GameRequestDto() { }
+	public GameRequestDTO() { }
 	
 	public Game converterParaEntidade() {
 		return new Game(title, year, genre, platforms, score, imgUrl, shortDescription, longDescription);

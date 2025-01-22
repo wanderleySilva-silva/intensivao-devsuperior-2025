@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.dslist.dto.GameRequestDto;
-import com.devsuperior.dslist.dto.GameResponseDto;
-import com.devsuperior.dslist.dto.GameResponseMinDto;
+import com.devsuperior.dslist.dto.GameRequestDTO;
+import com.devsuperior.dslist.dto.GameResponseDTO;
+import com.devsuperior.dslist.dto.GameResponseMinDTO;
 import com.devsuperior.dslist.services.GameService;
 
 @RestController
@@ -27,18 +27,18 @@ public class GameController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<GameResponseMinDto>> findAll() {
+	public ResponseEntity<List<GameResponseMinDTO>> findAll() {
 		return ResponseEntity.ok(gameService.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<GameResponseDto> findById(@PathVariable Long id) {
+	public ResponseEntity<GameResponseDTO> findById(@PathVariable Long id) {
 		return ResponseEntity.ok(gameService.findById(id));
 	}
 	
 	@PostMapping
-	public ResponseEntity<GameResponseMinDto> save(@RequestBody GameRequestDto gameRequestDto){
-		GameResponseMinDto savedGame = gameService.save(gameRequestDto);
+	public ResponseEntity<GameResponseMinDTO> save(@RequestBody GameRequestDTO gameRequestDto){
+		GameResponseMinDTO savedGame = gameService.save(gameRequestDto);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(savedGame);
 	}
