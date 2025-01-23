@@ -1,5 +1,5 @@
 -- Criação da tabela tb_game
-CREATE TABLE tb_game (
+CREATE TABLE IF NOT EXISTS tb_game (
     id SERIAL PRIMARY KEY, -- Chave primária auto incrementada
     title VARCHAR(255) NOT NULL, -- Título do jogo
     score NUMERIC(3, 1) NOT NULL, -- Nota do jogo (ex.: 4.8)
@@ -12,13 +12,13 @@ CREATE TABLE tb_game (
 );
 
 -- Criação da tabela tb_game_list
-CREATE TABLE tb_game_list (
+CREATE TABLE IF NOT EXISTS tb_game_list (
     id SERIAL PRIMARY KEY, -- Chave primária auto incrementada
     name VARCHAR(255) NOT NULL -- Nome da lista de jogos
 );
 
 -- Criação da tabela tb_belonging (tabela de relacionamento)
-CREATE TABLE tb_belonging (
+CREATE TABLE IF NOT EXISTS tb_belonging (
     list_id INT NOT NULL, -- ID da lista de jogos
     game_id INT NOT NULL, -- ID do jogo
     position INT NOT NULL, -- Posição do jogo na lista
