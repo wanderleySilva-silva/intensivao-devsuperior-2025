@@ -13,8 +13,8 @@ public class OpenAPIConfig {
 	public OpenAPI configuracao() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API PRODUTOS")
-                        .description("API PRODUTO NA CLOUD")
+                        .title("API DE GAMES")
+                        .description("API GAMES INSTENSIVÃO DEVSUPERIOR")
                         .version("1.0.0")
                 );
     }
