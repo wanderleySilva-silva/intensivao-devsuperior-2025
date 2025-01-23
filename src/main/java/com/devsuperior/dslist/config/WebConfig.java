@@ -9,19 +9,8 @@ import io.swagger.v3.oas.models.servers.Server;
 @Configuration
 public class WebConfig {
 	
-	/*
-	 * @Value("${cors.origins}") private String corsOrigins;
-	 * 
-	 * @Bean public WebMvcConfigurer corsConfigurer() { return new
-	 * WebMvcConfigurer() {
-	 * 
-	 * @Override public void addCorsMappings(CorsRegistry registry) {
-	 * registry.addMapping("/**") .allowedOrigins(corsOrigins) .allowedMethods("*")
-	 * .allowedHeaders("*") .allowCredentials(true); } }; }
-	 */
-	
 	@Bean
-	OpenAPI customOpenAPI() {
+	public OpenAPI customOpenAPI() {
 		return new OpenAPI().addServersItem(new Server().url("https://intensivao-devsuperior-2025-production.up.railway.app"));
 	}
 }
