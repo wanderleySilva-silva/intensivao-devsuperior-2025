@@ -3,6 +3,7 @@ package com.devsuperior.dslist.controllores;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +38,15 @@ public class GameListController {
 	@GetMapping("/{listId}/games")
 	public ResponseEntity<List<GameResponseMinDTO>> findAllGamesByList(@PathVariable Long listId) {
 		return ResponseEntity.ok(gameService.findAllByList(listId));
+	}
+	
+	@Operation(summary = "Deletar")
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteById(@PathVariable Long id){
+		
+		gameListService.deleteById(id);
+		
+		return ResponseEntity.noContent().build();
 	}
 
 }

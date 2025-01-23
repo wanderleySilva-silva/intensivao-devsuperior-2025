@@ -18,10 +18,15 @@ public class GameListService {
 		this.gameListRepository = gameListRepository;
 	}
 	
+	
 	@Transactional(readOnly = true)
 	public List<GameListResponseDTO> findAll() {
 		List<GameList> allGamesList = gameListRepository.findAll();
 				
 		return allGamesList.stream().map(game -> new GameListResponseDTO(game)).toList();
+	}
+	
+	public void deleteById(Long id) {
+		gameListRepository.deleteById(id);
 	}
 }
