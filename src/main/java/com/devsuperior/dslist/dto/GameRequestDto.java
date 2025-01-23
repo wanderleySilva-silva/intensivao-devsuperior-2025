@@ -4,6 +4,7 @@ import com.devsuperior.dslist.entities.Game;
 
 public class GameRequestDTO {
 
+
 	private String title;
 	private Integer year;
 	private String genre;
