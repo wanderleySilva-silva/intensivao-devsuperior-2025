@@ -14,7 +14,9 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8080", "https://intensivao-devsuperior-2025-production.up.railway.app")
+                        .allowedOrigins("http://localhost:8080",
+                        				"https://intensivao-devsuperior-2025-production.up.railway.app",
+                        				"https://intensivao-devsuperior-2025-production.up.railway.app/swagger-ui/index.html")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
