@@ -21,7 +21,7 @@ public class WebConfig {
 	 */
 	
 	@Bean
-	public OpenAPI customOpenAPI() {
-		return new OpenAPI().addServersItem(new Server().url("https://intensivao-devsuperior-2025-production.up.railway.app/"));
+	OpenAPI customOpenAPI() {
+		return new OpenAPI().addServersItem(new Server().url("https://intensivao-devsuperior-2025-production.up.railway.app"));
 	}
 }
