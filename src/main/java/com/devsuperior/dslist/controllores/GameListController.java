@@ -13,6 +13,8 @@ import com.devsuperior.dslist.dto.GameResponseMinDTO;
 import com.devsuperior.dslist.services.GameListService;
 import com.devsuperior.dslist.services.GameService;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 @RestController
 @RequestMapping(value = "/lists")
 public class GameListController {
@@ -24,12 +26,14 @@ public class GameListController {
 		this.gameListService = gameListService;
 		this.gameService = gameService;
 	}
-
+	
+	@Operation(summary = "Listar todas")
 	@GetMapping
 	public ResponseEntity<List<GameListResponseDTO>> findAll() {
 		return ResponseEntity.ok(gameListService.findAll());
 	}
 	
+	@Operation(summary = "Listar todos games da lista de games")
 	@GetMapping("/{listId}/games")
 	public ResponseEntity<List<GameResponseMinDTO>> findAllGamesByList(@PathVariable Long listId) {
 		return ResponseEntity.ok(gameService.findAllByList(listId));

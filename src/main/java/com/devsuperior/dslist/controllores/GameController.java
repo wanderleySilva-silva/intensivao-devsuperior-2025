@@ -16,6 +16,10 @@ import com.devsuperior.dslist.dto.GameResponseDTO;
 import com.devsuperior.dslist.dto.GameResponseMinDTO;
 import com.devsuperior.dslist.services.GameService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Games", description = "Game Controller")
 @RestController
 @RequestMapping(value = "/games")
 public class GameController {
@@ -26,16 +30,19 @@ public class GameController {
 		this.gameService = gameService;
 	}
 	
+	@Operation(summary = "Listar Todos")
 	@GetMapping
 	public ResponseEntity<List<GameResponseMinDTO>> findAll() {
 		return ResponseEntity.ok(gameService.findAll());
 	}
 	
+	@Operation(summary = "Listar por id")
 	@GetMapping("/{id}")
 	public ResponseEntity<GameResponseDTO> findById(@PathVariable Long id) {
 		return ResponseEntity.ok(gameService.findById(id));
 	}
 	
+	@Operation(summary = "Salvar")
 	@PostMapping
 	public ResponseEntity<GameResponseMinDTO> save(@RequestBody GameRequestDTO gameRequestDto){
 		GameResponseMinDTO savedGame = gameService.save(gameRequestDto);

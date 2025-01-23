@@ -3,12 +3,24 @@ package com.devsuperior.dslist.dto;
 import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.projections.GameMinProjection;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(name = "GameMínimo Response DTO", description = "GameMínimo Response DTO")
 public class GameResponseMinDTO {
 
+	@Schema(name = "Id")
 	private Long id;
+	
+	@Schema(name = "Tittle")
 	private String title;
+	
+	@Schema(name = "Year")
 	private Integer year;
+	
+	@Schema(name = "Img Url")
 	private String imgUrl;
+	
+	@Schema(name = "Short Description")
 	private String shortDescription;
 	
 	public GameResponseMinDTO() {
